@@ -138,6 +138,7 @@ $linkActive: #B90C0CCC;
         @media (max-width: 1024px ) {
             padding: 36px 0;
             }
+            // как добавить анимацию?
         &:hover::after {
             content: "";
             display: block;
@@ -245,6 +246,7 @@ $linkActive: #B90C0CCC;
         margin: 82px auto 0;
         text-transform: uppercase;
         cursor: pointer;
+        transition: background-color 0.2s linear 0.3s, box-shadow 0.2s linear 0.3s;
         @media (max-width: 1024px ) {
             width: 100%;
             max-width: 313px;
@@ -363,13 +365,15 @@ $linkActive: #B90C0CCC;
             grid-template-columns: repeat(2, 50%);
             }
     }
+    // не получается сделать анимацию бэкграунду
     &__item {
         position: relative;
         text-decoration: none;
         text-align: center;
         color: transparent;
         display: block;
-        
+        // background-color: transparent;
+        transition: color .2s linear .2s;
         
         &__wrap {
             position: relative;
@@ -431,6 +435,7 @@ $linkActive: #B90C0CCC;
             left: 0px;
             background-color: $linkHover;
             z-index: 0;
+            transition: background-color .2s linear .2s;
         }
         &:active {
             position: relative;
@@ -446,6 +451,7 @@ $linkActive: #B90C0CCC;
             left: 0px;
             background-color: $linkActive;
             z-index: 0;
+            transition: background-color .2s linear .2s;
         }
     }
 }
@@ -467,7 +473,8 @@ $linkActive: #B90C0CCC;
     }
     &__item {
         display: flex;
-        flex-wrap:wrap;
+        flex-direction: column;
+        align-content: flex-start;
         width: calc((100% - 90px) / 4);
         @media (max-width: 1024px ) {
             width: calc((100% - 75px) / 4);
@@ -486,7 +493,6 @@ $linkActive: #B90C0CCC;
         }
         
         &__wraper{
-            width: 100%;
             position: relative;
             margin-bottom: 30px;
             overflow: hidden; 
@@ -496,11 +502,17 @@ $linkActive: #B90C0CCC;
             &::after{
                 content: "";
                 display: block;
-                padding-top: auto;
+                padding-top: 100%;
+                position: absolute;
             }
         }
         &__img {
-            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             object-position: center;
         }
         &__name{
@@ -521,7 +533,6 @@ $linkActive: #B90C0CCC;
             color: $colorTextAndIcons;
             text-transform: uppercase;
             margin-bottom: 18px;
-            width: 100%;
             @media (max-width: 1024px ) {
                 @include pStyleAdaptive();
                 margin-bottom: 22.5px;
@@ -544,8 +555,7 @@ $linkActive: #B90C0CCC;
     // не получается сделать ховер и эктив
     &__socials{
             display: flex;
-            margin: auto 0 0 0;
-            align-self: flex-end;
+            margin: auto 0 0 0 ;
         } 
     }
     &__socials__link {
@@ -553,10 +563,13 @@ $linkActive: #B90C0CCC;
         margin-right: 6px;
         height: 39px;
         width: 39px;
+        border: 1px solid #C6CBCD;
+        padding: 10px;
         cursor: pointer;
         @media (max-width: 1024px ) {
             height: 33px;
             width: 33px;
+            padding: 9px;
         }
         @media (max-width: 320px ) {
             height: 39px;
@@ -569,12 +582,19 @@ $linkActive: #B90C0CCC;
         pointer-events: none;
     }
     &__socials__link:hover {
-        color: $linkHover;
+        border: 1px solid $linkHover;
     }
     &__socials__link:active {
-        color: $linkActive;
+        border: 1px solid $linkActive;
+    }
+    &__socials__path:hover {
+        fill: $linkHover;
+    }
+    &__socials__path:active {
+        fill: $linkActive;
     }
 }
+
 .testimonials {
     &__container {
         max-width: 100%;
@@ -726,6 +746,7 @@ $linkActive: #B90C0CCC;
         margin: 50px auto 0;
         cursor: pointer;
         text-transform: uppercase;
+        transition: background-color 0.2s linear 0.3s, box-shadow 0.2s linear 0.3s;;
         @media (max-width: 1024px ) {
             width: 100%;
             max-width: 313px;
@@ -819,11 +840,14 @@ $linkActive: #B90C0CCC;
             margin-right: 26px;
             height: 39px;
             width: 39px;
+            border: 1px solid #C6CBCD;
+            padding: 10px;
             cursor: pointer;
             @media (max-width: 1024px ) {
                 margin-right: 22px;
                 height: 33px;
                 width: 33px;
+                padding: 9px;
             }
             @media (max-width: 480px ) {
                 margin-right: 16px;
@@ -841,10 +865,16 @@ $linkActive: #B90C0CCC;
             pointer-events: none;
             }
         &__link:hover{
-            fiil: $linkHover;
+            border: 1px solid $linkHover;
         }
         &__link:active {
-            color: $linkActive;
+            border: 1px solid $linkActive;
+        }
+        &__path:hover {
+            fill: $linkHover;
+        }
+        &__path:active {
+            fill: $linkActive;
         }
     }
     &__bottom {
