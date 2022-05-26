@@ -520,7 +520,6 @@ $linkActive: #B90C0CCC;
             font-weight: 700;
             text-transform: capitalize;
             margin-bottom: 5px;
-            display: block;
             @media (max-width: 1024px ) {
                 @include pStyle();
                 font-weight: 700;
@@ -529,7 +528,6 @@ $linkActive: #B90C0CCC;
         }
         &__position{
             @include pStyle();
-            display: block;
             color: $colorTextAndIcons;
             text-transform: uppercase;
             margin-bottom: 18px;
