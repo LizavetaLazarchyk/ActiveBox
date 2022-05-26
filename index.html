@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -245,17 +246,54 @@
     </div>
     </section>
     <section class="testimonials">
-        <div class="container testimonials__container">
-            <div class="testimonials__wrapper">
-                <div class="testimonials__img__wrap">
-                    <img src="img/bg.jpg" alt="" class="testimonials__img">
+        <div class=" swiper testimonials__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                <div class="testimonials__wrapper">
+                    <div class="testimonials__img__wrap">
+                        <img src="img/bg.jpg" alt="" class="testimonials__img">
+                    </div>
+                    <div class="testimonials__content">
+                        <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="testimonials__comment">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
                 </div>
-                <div class="testimonials__content">
-                    <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
-                    <p class="testimonials__comment">Susan Sims, Interaction Designer at XYZ</p>
                 </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper">
+                        <div class="testimonials__img__wrap">
+                            <img src="img/bg.jpg" alt="" class="testimonials__img">
+                        </div>
+                        <div class="testimonials__content">
+                            <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                            <p class="testimonials__comment">Susan Sims, Interaction Designer at XYZ</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                <div class="testimonials__wrapper">
+                    <div class="testimonials__img__wrap">
+                        <img src="img/bg.jpg" alt="" class="testimonials__img">
+                    </div>
+                    <div class="testimonials__content">
+                        <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                        <p class="testimonials__comment">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper">
+                        <div class="testimonials__img__wrap">
+                            <img src="img/bg.jpg" alt="" class="testimonials__img">
+                        </div>
+                        <div class="testimonials__content">
+                            <h2 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h2>
+                            <p class="testimonials__comment">Susan Sims, Interaction Designer at XYZ</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
-            <!-- <div class="testimonials__slider"></div> -->
+            <div class="swiper-pagination"></div>
         </div>
     </section>
     <section class="download">
@@ -305,5 +343,15 @@
                 </div>
             </div>
     </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper(".testimonials__swiper", {
+        spaceBetween: 0,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+    });
+    </script>
 </body>
 </html>

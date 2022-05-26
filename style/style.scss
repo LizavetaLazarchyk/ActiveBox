@@ -594,19 +594,28 @@ $linkActive: #B90C0CCC;
 }
 
 .testimonials {
-    &__container {
-        max-width: 100%;
-        padding: 0;
-        @media (max-width: 1024px ) {
-            width: 100%;
-            padding: 0px;
-            }
+    // &__container {
+    //     max-width: 100%;
+    //     padding: 0;
+    //     @media (max-width: 1024px ) {
+    //         width: 100%;
+    //         padding: 0px;
+    //         }
+    // }
+    &__swiper{
+        padding-bottom: 50px;
     }
     &__wrapper{
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
         height: 100%;
+        max-width: 100%;
+        padding: 0;
+        @media (max-width: 1024px ) {
+            width: 100%;
+            padding: 0px;
+            }
     }
     &__img__wrap {
         width: 50%;
@@ -691,6 +700,12 @@ $linkActive: #B90C0CCC;
             max-width: 275px;
         }
     }
+}
+.swiper-pagination {
+    margin-top: 40px;
+}
+.swiper-pagination-bullet-active {
+    background-color: #5C3249;
 }
 .download {
     padding: 175px 0;
