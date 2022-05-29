@@ -1,3 +1,11 @@
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -34,13 +42,13 @@ path {
   position: fixed;
   z-index: 3;
   width: 100%;
-  padding: 15px;
+  padding: 20px 20px 0;
 }
 
 @media (max-width: 320px) {
   .header {
     width: 100%;
-    padding: 0 20px;
+    padding: 20px;
   }
 }
 
@@ -63,7 +71,7 @@ path {
 @media (max-width: 1024px) {
   .header_container {
     max-width: 984px;
-    padding: 0px;
+    padding: 0px 0px 15px;
   }
 }
 
@@ -99,9 +107,9 @@ path {
   }
 }
 
-.header__menu__link {
+.header__menu__open {
   display: block;
-  padding: 19px 15px;
+  padding: 0 15px;
 }
 
 .navigation__list {
@@ -186,6 +194,77 @@ path {
   }
 }
 
+.mobile_menu {
+  padding: 20px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  color: #fff;
+  width: 100%;
+  z-index: 4;
+  background-color: #252B4999;
+}
+
+.mobile_menu__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mobile_menu__logo_link {
+  display: block;
+  margin-bottom: 70px;
+}
+
+.mobile_menu__logo_svg {
+  height: 26px;
+  width: 184px;
+}
+
+@media (max-width: 320px) {
+  .mobile_menu__logo_svg {
+    height: 14.5px;
+    width: 102px;
+  }
+}
+
+.mobile_menu__close {
+  display: block;
+  padding-right: 15px;
+}
+
+.mobile_menu__list {
+  list-style-type: none;
+  max-width: 320px;
+  text-align: right;
+  margin: 0 15px 0 auto;
+}
+
+@media (max-width: 400px) {
+  .mobile_menu__list {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+.mobile_menu__item {
+  margin-bottom: 48px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.mobile_menu__link {
+  text-decoration: none;
+  display: block;
+  color: #fff;
+}
+
 .banner {
   background-image: url(../img/maneImg.jpg);
   background-repeat: no-repeat;
@@ -196,6 +275,7 @@ path {
   padding-bottom: 120px;
   padding-top: 230px;
   z-index: 0;
+  min-height: 480px;
 }
 
 @media (max-width: 1024px) {

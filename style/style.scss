@@ -55,6 +55,12 @@ $linkActive: #B90C0CCC;
         padding: 0 20px;
     }
 }
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
 * {
     margin: 0;
     padding: 0;
@@ -70,10 +76,11 @@ path {
     position: fixed;
     z-index: 3;
     width: 100%;
-    padding: 15px;
+    padding: 20px 20px 0;
+    // background-color: #252B4980 ;
     @media (max-width: 320px ) {
         width: 100%;
-        padding: 0 20px;
+        padding: 20px;
         }
 
 &_container {
@@ -86,7 +93,7 @@ path {
     z-index: 2;
     @media (max-width: 1024px ) {
     max-width: 984px;
-    padding: 0px;
+    padding: 0px 0px 15px;
     }
     @media (max-width: 600px ) {
         border-bottom: none;
@@ -108,12 +115,13 @@ path {
     @media (max-width: 768px ) {
         display: block;
     }
-    &__link {
+    &__open {
         display: block;
-        padding: 19px 15px;
+        padding: 0 15px;
     }
 }
 }
+
 .navigation {
     &__list {
         display: flex;
@@ -172,7 +180,60 @@ path {
         display: none;
     }
 }
+.mobile_menu {
+    padding: 20px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    width: 100%;
+    z-index: 4;
+    background-color: #252B4999;
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo_link {
+        display: block;
+        margin-bottom: 70px;
+    }
+    &__logo_svg {
+        height: 26px;
+        width: 184px;
+        @media (max-width: 320px ) {
+            height: 14.5px;
+            width: 102px;
+            }
+    }
+    &__close {
+        display: block;
+        padding-right: 15px;
+    }
+    &__list {
+        list-style-type: none;
+        max-width: 320px;
+        text-align: right;
+        margin: 0 15px 0 auto;
+        @media (max-width: 400px ) {
+            text-align: left;
+            max-width: 100%;
+            }
 
+    }
+    &__item {
+        margin-bottom: 48px;
+        font-family: $maneFont;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+    &__link {
+        text-decoration: none;
+        display: block;
+        color: #fff;
+    }
+}
 .banner {
     background-image: url(../img/maneImg.jpg) ;
     background-repeat: no-repeat;
@@ -183,6 +244,7 @@ path {
     padding-bottom: 120px ;
     padding-top: 230px;
     z-index: 0;
+    min-height: 480px;
     @media (max-width: 1024px ) {
         padding: 257px 20px 126px ;
         }

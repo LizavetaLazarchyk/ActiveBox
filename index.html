@@ -13,35 +13,53 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header" data-background >
                 <div class="container header_container">
                 <a href="" class="header__logo__link"> <object data="img/iconLogo.svg" type="image/svg+xml" class="header__logo"></object></a>
                 <nav class="navigation">
                 <ul class="navigation__list">
-                    <li class="navigation__item"> <a href="" class="navigation__link"> features</a></li>
-                    <li class="navigation__item"> <a href="" class="navigation__link"> works </a></li>
-                    <li class="navigation__item"> <a href="" class="navigation__link"> our team</a></li>
-                    <li class="navigation__item"> <a href="" class="navigation__link"> testimonials</a></li>
-                    <li class="navigation__item"> <a href="" class="navigation__link"> download</a></li>
+                    <li class="navigation__item"> <a href="#features" class="navigation__link"> features</a></li>
+                    <li class="navigation__item"> <a href="#works" class="navigation__link"> works </a></li>
+                    <li class="navigation__item"> <a href="#team" class="navigation__link"> our team</a></li>
+                    <li class="navigation__item"> <a href="#testimonials" class="navigation__link"> testimonials</a></li>
+                    <li class="navigation__item"> <a href="#download" class="navigation__link"> download</a></li>
                 </ul>
                 </nav>
                 <div class="header__menu">
-                <a href="" class="header__menu__link" >
+                <a href="" data-open class="header__menu__open" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
                         <path d="M0 0H24V3H0V0ZM0 7.5H24V10.5H0V7.5ZM0 15H24V18H0V15Z" fill="white"/>
                     </svg>
                 </a>
                 </div>
                 </div>
-            </header>
+    </header>
+    <section class="mobile_menu hide">
+                    <div class="mobile_menu__top">
+                    <a href="" class="mobile_menu__logo_link"> <object data="img/iconLogo.svg" type="image/svg+xml" class="mobile_menu__logo_svg"></object></a>
+                    <a href="" data-close class="mobile_menu__close" >
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.454102 17.9248L8.93938 9.43952L17.4247 0.954242L19.546 3.07556L2.57542 20.0461L0.454102 17.9248Z" fill="white"/>
+                            <path d="M2.57544 0.954102L11.0607 9.43938L19.546 17.9247L17.4247 20.046L0.454119 3.07542L2.57544 0.954102Z" fill="white"/>
+                        </svg>
+                    </a>
+                    </div>
+                    <ul class="mobile_menu__list">
+                    <li class="mobile_menu__item"> <a href="#features" class="mobile_menu__link"> features</a></li>
+                    <li class="mobile_menu__item"> <a href="#works" class="mobile_menu__link"> works </a></li>
+                    <li class="mobile_menu__item"> <a href="#team" class="mobile_menu__link"> our team</a></li>
+                    <li class="mobile_menu__item"> <a href="#testimonials" class="mobile_menu__link"> testimonials</a></li>
+                    <li class="mobile_menu__item"> <a href="#download" class="mobile_menu__link"> download</a></li>
+                    </ul>
+    </section>
     <section class="banner">
-            <div class="container banner__container">
+            <div class="container banner__container " data-background>
                 <h1 class="banner__title">Your Favorite One Page Multi Purpose Template</h1>
                 <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna vel scelerisque nisl consectetur et.</p>
                 <button class="banner__btn">Find Out More</button>
         </div>
     </section>
-    <section class="features">
+    <section class="features" id="features">
         <div class="container features__container">
             <div class="features__wrap">
                 <article class="features__item">
@@ -77,7 +95,7 @@
             </div>
         </div>
     </section>
-    <section class="works">
+    <section class="works" id="works">
         <div class="container works__container">
             <div class="works__items">
                 <a href="" class="works__item">
@@ -139,7 +157,7 @@
             </div>    
         </div>
     </section>
-    <section class="team">
+    <section class="team" id="team">
     <div class="container">
     <div class="team__items">
         <div class="team__item">
@@ -245,7 +263,7 @@
     </div>
     </div>
     </section>
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class=" swiper testimonials__swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -296,7 +314,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </section>
-    <section class="download">
+    <section class="download" id="download">
         <div class="container">
             <h3 class="download__title">Are You Ready to Start? Download Now For Free!</h3>
             <p class="download__text">Fusce dapibus, tellus ac cursus commodo</p>
@@ -344,6 +362,7 @@
             </div>
     </footer>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scrpt.js"></script>
     <script>
     var swiper = new Swiper(".testimonials__swiper", {
         spaceBetween: 0,
