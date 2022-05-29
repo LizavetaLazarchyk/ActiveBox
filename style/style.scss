@@ -50,7 +50,7 @@ $linkActive: #B90C0CCC;
         max-width: 1024px;
         padding: 0 20px;
     }
-    @media (max-width: 320px ) {
+    @media (max-width: 480px ) {
         width: 100%;
         padding: 0 20px;
     }
@@ -60,6 +60,9 @@ $linkActive: #B90C0CCC;
     padding: 0;
     box-sizing: border-box;
 }
+path {
+    transition: all .3s linear;
+}
 .container {
     @include container();
 }
@@ -67,6 +70,7 @@ $linkActive: #B90C0CCC;
     position: fixed;
     z-index: 3;
     width: 100%;
+    padding: 15px;
     @media (max-width: 320px ) {
         width: 100%;
         padding: 0 20px;
@@ -84,7 +88,7 @@ $linkActive: #B90C0CCC;
     max-width: 984px;
     padding: 0px;
     }
-    @media (max-width: 320px ) {
+    @media (max-width: 600px ) {
         border-bottom: none;
     }
 }
@@ -138,16 +142,19 @@ $linkActive: #B90C0CCC;
         @media (max-width: 1024px ) {
             padding: 36px 0;
             }
-            // как добавить анимацию?
-        &:hover::after {
+        &::after {
             content: "";
             display: block;
             position: absolute;
             height: 3px;
             width: 134px;
-            background-color: #BABBC5;
+            background-color: transparent;
             top: calc(100% - 2px);
             left: 0px;
+            transition: background-color .3s linear;
+        }
+        &:hover::after {
+            background-color: #BABBC5;
             @media (max-width: 1024px ) {
                 width: 119px;
                 }
@@ -155,14 +162,7 @@ $linkActive: #B90C0CCC;
             color: $colorBtnHover;
         }
         &:active::after {
-            content: "";
-            display: block;
-            position: absolute;
-            height: 3px;
-            width: 134px;
             background-color: $colorBtnHover;
-            top: calc(100% - 2px);
-            left: 0px;
             @media (max-width: 1024px ) {
                 width: 119px;
                 }
@@ -184,11 +184,17 @@ $linkActive: #B90C0CCC;
     padding-top: 230px;
     z-index: 0;
     @media (max-width: 1024px ) {
-        padding: 0 20px 126px ;
+        padding: 257px 20px 126px ;
         }
-    @media (max-width: 320px ) {
-            padding: 0 0 52px ;
+    @media (max-width: 768px ) {
+            padding: 180px 0 70px ;
         }
+    @media (max-width: 600px ) {
+        padding: 140px 0 70px ;
+    }
+    @media (max-width: 480px ) {
+        padding: 110px 0 52px ;
+    }
     
 
     &::after {
@@ -217,10 +223,11 @@ $linkActive: #B90C0CCC;
             max-width: 744px;
             margin: 0 auto 62px;
             }
-        @media (max-width: 320px ) {
+        @media (max-width: 480px ) {
+            max-width: 400px;
             font-size: 36px;
             line-height: 42px;
-            margin-bottom: 33px;
+            margin-bottom: 36px;
             }
     }
     &__text {
@@ -231,8 +238,9 @@ $linkActive: #B90C0CCC;
             max-width: 744px;
             margin: 0 auto;
             }
-        @media (max-width: 320px ) {
+        @media (max-width: 480px ) {
             @include pStyleAdaptive();
+            max-width: 400px;
             }
     }
     &__btn{
@@ -246,17 +254,20 @@ $linkActive: #B90C0CCC;
         margin: 82px auto 0;
         text-transform: uppercase;
         cursor: pointer;
-        transition: background-color 0.2s linear 0.3s, box-shadow 0.2s linear 0.3s;
+        transition: background-color 0.3s linear, box-shadow 0.3s linear;
         @media (max-width: 1024px ) {
             width: 100%;
             max-width: 313px;
             margin: 92px auto 0;
             }
-        @media (max-width: 1024px ) {
+        @media (max-width: 768px ) {
             width: 100%;
             max-width: 280px;
-            margin: 51px auto 0;
+            margin: 65px auto 0;
             padding: 15px;
+            }
+        @media (max-width: 480px ) {
+            margin: 51px auto 0;
             }
         
     }
@@ -269,43 +280,40 @@ $linkActive: #B90C0CCC;
     }
 }
 .features {
-    padding-top: 127px;
+    padding: 116px 15px 134.5px;
     @media (max-width: 1024px ) {
-        padding-top: 87px;
+        padding: 78px 15px 80px;
         }
-    @media (max-width: 1024px ) {
-        padding-top: 40px;
+    @media (max-width: 924px ) {
+        padding: 50px 20px 45px;
+        }
+    @media (max-width: 480px ) {
+        padding: 40px 20px 35px;
         }
 
     &__container{
-        @include container();
         padding: 0;
-    
     }
     &__wrap {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 88px;
+        column-gap: 30px;
+        @media (max-width: 1024px ) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 50px;
+            column-gap: 20px;
+            }
+        @media (max-width: 620px ) {
+            grid-template-columns: 1fr;
+            row-gap: 41.5px;
+            }
     }
     &__item {
-        width: calc((100% - 60px)/3);
-        margin-bottom: 88px;
-        @media (max-width: 1024px ) {
-            margin-bottom: 50px;
-            width: calc((100% - 40px)/3);
-        }
-        @media (max-width: 768px ) {
-            margin-bottom: 50px;
-            width: calc((100% - 30px)/2);
-        }
-        @media (max-width: 320px ) {
-            margin-bottom: 50px;
-            width: 100%;
-        &:last-child {
-            margin-bottom: 0px;
-        }
-        }
-
+        @media (max-width: 620px ) {
+            max-width: 480px;
+            margin: 0 auto;
+            }
         &__svg {
             max-width: 100px;
             max-height: 100px;
@@ -349,32 +357,19 @@ $linkActive: #B90C0CCC;
     &__container{
         max-width: 100%;
         padding: 0;
-        padding-top: 45px;
-        @media (max-width: 1024px ) {
-            padding-top: 30px;
-            }
-        @media (max-width: 320px ) {
-            padding-top: 34px;
-            }
     }
     &__items {
         display: grid;
         grid-template-columns: repeat(4, 25%);
         gap: 0;
-        @media (max-width: 480px ) {
+        @media (max-width: 768px ) {
             grid-template-columns: repeat(2, 50%);
             }
     }
-    // не получается сделать анимацию бэкграунду
     &__item {
         position: relative;
         text-decoration: none;
-        text-align: center;
-        color: transparent;
-        display: block;
-        // background-color: transparent;
-        transition: color .2s linear .2s;
-        
+        display: block;        
         &__wrap {
             position: relative;
             overflow: hidden;
@@ -398,10 +393,24 @@ $linkActive: #B90C0CCC;
             position: absolute;
             height: 100%;
             width: 100%;
-            transform: translateY(30%);
             top: 0;
             left: 0;
-            z-index: 1;
+            text-align: center;
+            background-color: transparent;
+            display: flex;
+            color: transparent;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all .3s linear;
+            &:hover {
+                color: #fff;
+                background-color: $linkHover;
+            }
+            &:active {
+                color: #fff;
+                background-color: $linkActive;
+            }
         }
         &__title {
             @include h4Style();
@@ -421,38 +430,6 @@ $linkActive: #B90C0CCC;
                 @include pStyleAdaptive();
             }
         }
-        &:hover {
-            position: relative;
-            color: #fff;
-        }
-        &:hover::after {
-            content: "";
-            display: block;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: $linkHover;
-            z-index: 0;
-            transition: background-color .2s linear .2s;
-        }
-        &:active {
-            position: relative;
-            color: #fff;
-        }
-        &:active::after {
-            content: "";
-            display: block;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background-color: $linkActive;
-            z-index: 0;
-            transition: background-color .2s linear .2s;
-        }
     }
 }
 .team {
@@ -461,27 +438,28 @@ $linkActive: #B90C0CCC;
         padding: 78px 0;
         }
     @media (max-width: 768px ) {
-        padding-bottom: 28px;
+        padding: 50px 0;
         }
     @media (max-width: 320px ) {
         padding: 35px 0;
         }
     &__items {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 25px;
+        @media (max-width: 768px ) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 30px;
+        }
+        @media (max-width: 480px ) {
+            grid-template-columns: 1fr;
+        }
     }
     &__item {
         display: flex;
         flex-direction: column;
         align-content: flex-start;
-        width: calc((100% - 90px) / 4);
-        @media (max-width: 1024px ) {
-            width: calc((100% - 75px) / 4);
-            
-        }
         @media (max-width: 768px ) {
-            width: calc((100% - 30px) / 2);
             margin-bottom: 50px;
         }
         @media (max-width: 320px ) {
@@ -503,10 +481,9 @@ $linkActive: #B90C0CCC;
                 content: "";
                 display: block;
                 padding-top: 100%;
-                position: absolute;
             }
         }
-        &__img {
+        &__photo {
             position: absolute;
             top: 0;
             left: 0;
@@ -554,54 +531,49 @@ $linkActive: #B90C0CCC;
     &__socials{
             display: flex;
             margin: auto 0 0 0 ;
+            column-gap: 6px;
         } 
     }
     &__socials__link {
-        display: block;
-        margin-right: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 39px;
         width: 39px;
         border: 1px solid #C6CBCD;
-        padding: 10px;
         cursor: pointer;
+        transition: all .3s linear;
         @media (max-width: 1024px ) {
             height: 33px;
             width: 33px;
-            padding: 9px;
         }
         @media (max-width: 320px ) {
             height: 39px;
             width: 39px;
         }
     }
-    &__socials__svg {
-        height: 100%;
-        width: 100%;
-        pointer-events: none;
-    }
-    &__socials__link:hover {
+    // &__socials__svg {
+       
+    // }
+    &__socials__link:hover path {
         border: 1px solid $linkHover;
-    }
-    &__socials__link:active {
-        border: 1px solid $linkActive;
-    }
-    &__socials__path:hover {
         fill: $linkHover;
     }
-    &__socials__path:active {
+    &__socials__link:active path {
+        border: 1px solid $linkActive;
+        fill: $linkActive;
+    }
+    &__socials__link:hover  {
+        border: 1px solid $linkHover;
+        fill: $linkHover;
+    }
+    &__socials__link:active  {
+        border: 1px solid $linkActive;
         fill: $linkActive;
     }
 }
 
 .testimonials {
-    // &__container {
-    //     max-width: 100%;
-    //     padding: 0;
-    //     @media (max-width: 1024px ) {
-    //         width: 100%;
-    //         padding: 0px;
-    //         }
-    // }
     &__swiper{
         padding-bottom: 50px;
     }
@@ -609,9 +581,9 @@ $linkActive: #B90C0CCC;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        height: 100%;
-        max-width: 100%;
+        height: fit-content;
         padding: 0;
+        background-color: #5C3249;
         @media (max-width: 1024px ) {
             width: 100%;
             padding: 0px;
@@ -624,7 +596,7 @@ $linkActive: #B90C0CCC;
         &::after{
             content: "";
             display: block;
-            padding-top: 100%;
+            padding-top: 66%;
         }
         @media (max-width: 480px ) {
             width: 100%;
@@ -641,15 +613,15 @@ $linkActive: #B90C0CCC;
         height: 100%;
     }
     &__content {
+        align-self: center;
         width: 50%;
-        background-color: #5C3249;
-        padding: 116px 170px 116px 129px ;
+        padding: 50px 100px 50px 130px ;
         color: #fff;
         @media (max-width: 1024px ) {
-            padding: 65px 104px 110px 88px ;
+            padding: 50px  88px ;
         }
         @media (max-width: 768px ) {
-            padding: 35px 20px 20px 35px;
+            padding: 20px 20px 20px 35px;
         }
         @media (max-width: 480px ) {
             width: 100%;
@@ -708,10 +680,10 @@ $linkActive: #B90C0CCC;
     background-color: #5C3249;
 }
 .download {
-    padding: 175px 0;
+    padding: 130px 0;
     text-align: center;
     @media (max-width: 1024px ) {
-        padding: 126px 0;
+        padding: 93px 0;
         }
     @media (max-width: 320px ) {
         padding: 85px 0 45px;
@@ -724,7 +696,7 @@ $linkActive: #B90C0CCC;
             line-height: 28px;
             margin-bottom: 20px;
             }
-        @media (max-width: 768px ) {
+        @media (max-width: 580px ) {
             max-width: 350px;
             margin: 0 auto 20px;
             }
@@ -805,9 +777,10 @@ $linkActive: #B90C0CCC;
         @media (max-width: 1024px ) {
             width: calc((100% - 40px) / 3);
         }
-        @media (max-width: 480px ) {
+        @media (max-width: 768px ) {
             width: 100%;
-            margin-bottom: 60px;
+            max-width: 550px;
+            margin: 0 auto 60px;
             &:last-child{
                 margin-bottom: 0;
             }
@@ -840,53 +813,45 @@ $linkActive: #B90C0CCC;
     &__socials {
         display: flex;
         justify-content:center;
-        margin-top: 20px;
+        column-gap: 27px;
+        padding-top: 20px;
         @media (max-width: 1024px ) {
-            margin-top: 15px;
+            padding-top: 15px;
+            column-gap: 23px;
         }
         @media (max-width: 480px ) {
-            margin-top: 0;
+            padding-top:16px;
         }
     
         &__link {
-            display: block;
-            margin-right: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 39px;
             width: 39px;
             border: 1px solid #C6CBCD;
-            padding: 10px;
             cursor: pointer;
+            transition: all .3s linear ;
             @media (max-width: 1024px ) {
-                margin-right: 22px;
                 height: 33px;
                 width: 33px;
                 padding: 9px;
             }
             @media (max-width: 480px ) {
-                margin-right: 16px;
                 height: 39px;
                 width: 39px;
             }
         }
-        &__link:last-child{
-            margin-right: 0px;
-        }
-        
-        &__svg {
-            height: 100%;
-            width: 100%;
-            pointer-events: none;
-            }
         &__link:hover{
             border: 1px solid $linkHover;
         }
         &__link:active {
             border: 1px solid $linkActive;
         }
-        &__path:hover {
+        &__link:hover path {
             fill: $linkHover;
         }
-        &__path:active {
+        &__link:active path {
             fill: $linkActive;
         }
     }
