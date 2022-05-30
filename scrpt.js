@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.querySelector('[data-open]'),
         modal = document.querySelector('.mobile_menu') ,
         closeBtn = document.querySelector('[data-close]'),
-        backgroundElements = document.querySelectorAll ('[data-background]'),
         menuItems = document.querySelectorAll ('.mobile_menu__link');
 
 
@@ -11,23 +10,14 @@ window.addEventListener('DOMContentLoaded', () => {
             modal.classList.add ('show');
             modal.classList.remove ('hide');
 
-            document.body.style.overflow = 'hidden';
-
-            backgroundElements.forEach ( item => {
-                item.classList.add ('hide');
-                item.classList.remove ('show');
-        });
+            // document.body.style.overflow = 'hidden';
         };
+
         function closeModal (){
             modal.classList.add ('hide');
             modal.classList.remove ('show');
 
-            document.body.style.overflow = '';
-
-            backgroundElements.forEach ( item  => {
-                item.classList.add ('show');
-                item.classList.remove ('hide');
-        });
+            // document.body.style.overflow = '';
         };
         openBtn.addEventListener ('click', openModal);
         closeBtn.addEventListener ('click', closeModal);
